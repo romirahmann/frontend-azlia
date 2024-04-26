@@ -1,0 +1,83 @@
+<div class="container">
+  <!-- headbar -->
+  <div class="headbar flex justify-between content-center">
+    <h1 class="text-2xl ms-2 mt-4 font-bold text-primary">
+      DETAIL TRANSACTION
+    </h1>
+  </div>
+</div>
+<div class="card-body mt-5 shadow-md sm:rounded-lg bg-white rounded-md p-5">
+  <table *ngIf="dataTransaksi">
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Kategori Transaksi</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3 text-primary font-semibold">
+        {{ dataTransaksi.category_name }}
+      </td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">
+        Jumlah Barang {{ dataTransaksi.category_name }}
+      </td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3 text-primary font-semibold">
+        {{ dataTransaksi.jumlah_barang }}
+      </td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Kode Barang</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.kode_barang }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Nama Barang</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.nama_barang }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Jenis Barang</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.nama_jenis_barang }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Satuan Barang</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.nama_satuan_barang }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Stok Barang</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.stok }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Tanggal {{ dataTransaksi.category_name }}</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.date | date }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Tanggal Kadaluarsa</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.tgl_kadaluarsa | date }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">No Rak</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.no_rak }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Nama Supplier</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.nama_supplier }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">No Telepon</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.no_telp }}</td>
+    </tr>
+    <tr class="text-2xl mt-5 uppercase">
+      <td class="font-semibold">Alamat Supplier</td>
+      <td class="px-6 py-3">:</td>
+      <td class="px-6 py-3">{{ dataTransaksi.alamat_supplier }}</td>
+    </tr>
+  </table>
+</div>

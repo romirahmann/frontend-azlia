@@ -1,0 +1,125 @@
+<div class="container">
+  <!-- headbar -->
+  <div class="headbar flex justify-between content-center">
+    <h1 class="text-2xl ms-2 mt-4 font-bold text-primary">ADD TRANSACTION</h1>
+  </div>
+  <div class="card-body mt-5 shadow-md sm:rounded-lg bg-white rounded-md p-5">
+    <form
+      class="space-y-4 md:space-y-6"
+      [formGroup]="formEditTransactions"
+      *ngIf="formEditTransactions"
+      (submit)="submitEdit()"
+    >
+      <div class="mt-2">
+        <label
+          for="category_transaction_id"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Kategori Transaksi</label
+        >
+        <select
+          id="category_transaction_id"
+          formControlName="category_transaction_id"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        >
+          <option value="null" disabled>Pilih Kategori</option>
+          <ng-container *ngFor="let item of categories">
+            <option value="{{ item.category_transaction_id }}">
+              {{ item.category_name }}
+            </option></ng-container
+          >
+        </select>
+      </div>
+      <div class="mt-2">
+        <label
+          for="barang"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Barang</label
+        >
+        <select
+          id="barang"
+          formControlName="barang_id"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        >
+          <option value="null" disabled>Pilih Barang</option>
+          <ng-container *ngFor="let item of barang">
+            <option value="{{ item.barang_id }}">
+              {{ item.nama_barang }}
+            </option></ng-container
+          >
+        </select>
+      </div>
+      <div class="mt-2">
+        <label
+          for="supplier"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Supplier</label
+        >
+        <select
+          id="supplier"
+          formControlName="id_supplier"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        >
+          <option value="null" disabled>Pilih Supplier</option>
+          <ng-container *ngFor="let item of supplier">
+            <option value="{{ item.id_supplier }}">
+              {{ item.nama_supplier }}
+            </option></ng-container
+          >
+        </select>
+      </div>
+      <div class="mt-2">
+        <label
+          for="rak"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Rak Gudang</label
+        >
+        <select
+          id="rak"
+          formControlName="id_rak"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+        >
+          <option value="null" disabled>Pilih No Rak</option>
+          <ng-container *ngFor="let item of rak">
+            <option value="{{ item.id_rak }}">
+              {{ item.no_rak }}
+            </option></ng-container
+          >
+        </select>
+      </div>
+      <div class="mt-2">
+        <label
+          for="date"
+          class="form-control block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Date</label
+        >
+        <input
+          type="date"
+          formControlName="date"
+          id="date"
+          class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+      <div class="mt-2">
+        <label
+          for="tgl_kadaluarsa"
+          class="form-control block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Tanggal Kadaluarsa</label
+        >
+        <input
+          type="date"
+          formControlName="tgl_kadaluarsa"
+          id="tgl_kadaluarsa"
+          class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+
+      <button
+        [disabled]="!formEditTransactions.valid"
+        type="submit"
+        class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
